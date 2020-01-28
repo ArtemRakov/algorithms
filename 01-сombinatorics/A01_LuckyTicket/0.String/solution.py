@@ -1,2 +1,2 @@
-def solution(letter):
+def solve(letter):
     return len(letter)
