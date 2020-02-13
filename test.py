@@ -18,13 +18,17 @@ for i in range(6):
     content = f.read().strip().split(", ")
     content = list(map(int, content))
     start_time = time.time()
-    result = str(solution.solve(content))
+    for x in range(100):
+        result = str(solution.solve(content))
+
     end_time = time.time()
+    avg = (end_time - start_time)/100
+
     expected_file = open("{}test.{}.out".format(path, i))
     expected = expected_file.read().strip()
     print("Expected: {}".format(expected))
     print("Got: {}".format(result))
     print("Result {}".format(result == expected))
-    print("Time: {}".format(end_time - start_time))
+    print("Average: {}".format(avg))
     print("----")
 
